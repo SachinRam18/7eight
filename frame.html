@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Oswald;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2 style="color: rgb(255, 255, 255); font-family: 'Oswald',sans-serif">Hello User</h2>
+p {
+  text-align: center;
+}
+  <p style="color: rgb(255, 255, 255); font-family: 'Oswald',sans-serif">
+Welcome to 7-Eight Training Institute, where we strive to empower individuals with a comprehensive array of skills essential for success in today's dynamic world.</p>
+
+<p style="color: rgb(255, 255, 255); font-family: 'Oswald',sans-serif">At 7-Eight, we offer a diverse range of courses covering programming languages such as Python, Java, C, C++, HTML, CSS, JavaScript, and more. Whether you're a beginner seeking to embark on your coding journey or an experienced developer aiming to enhance your skill set, our expert instructors are here to guide you every step of the way.</p>
+
+<p style="color: rgb(255, 255, 255); font-family: 'Oswald',sans-serif">But our commitment to your growth doesn't stop at technical proficiency. We understand the importance of soft skills in today's competitive landscape. That's why we provide specialized training in communication, leadership, time management, and other essential interpersonal skills.</p>
+
+<p style="color: rgb(255, 255, 255); font-family: 'Oswald',sans-serif">Additionally, for those aspiring to excel in academic pursuits, we offer JEE coaching tailored to the 11th and 12th syllabus. Our dedicated faculty members ensure that students are equipped with the knowledge and strategies necessary to ace these critical exams.</p>
+
+<p style="color: rgb(255, 255, 255); font-family: 'Oswald',sans-serif">Moreover, at 7-Eight, we foster a culture of research and academic excellence. Through our journal publication training, we empower students and professionals alike to effectively communicate their ideas and findings to the broader academic community.</p>
+
+<p style="color: rgb(255, 255, 255); font-family: 'Oswald',sans-serif">Whether you're looking to kickstart your career in programming, enhance your soft skills, or excel in academic examinations, 7-Eight Training Institute is your partner in success. Join us and unlock your full potential today!</p>
+</div>
+
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img src="C:\Users\Sachin\Desktop\1.jpg" alt="Details" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="C:\Users\Sachin\Desktop\5.jpg" alt="Ambience" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="C:\Users\Sachin\Desktop\2.jpg" alt="Outview" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="C:\Users\Sachin\Desktop\3.jpg" alt="Details" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
